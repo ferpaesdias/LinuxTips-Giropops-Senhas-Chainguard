@@ -29,9 +29,9 @@ docker container run -d --net rede_containers --name redis --hostname redis redi
 
 ### Execução do container do APP Giropops-Senhas
 
-Executa o container do APP Giropops-Senhas e o acesso ao APP é pelo navegador na porta 5000.
+Executa o container do APP Giropops-Senhas-Chainguard e o acesso ao APP é pelo navegador na porta 5000.
 ```shell
-docker container run -d --net rede_containers --name giropops-senhas -p 5000:5000 ferpdias/linuxtips-giropops-senhas-chainguard:1.0
+docker container run -d --net rede_containers --name giropops-senhas-chainguard -p 5000:5000 ferpdias/linuxtips-giropops-senhas-chainguard:1.0
 ```
 
 <br>
