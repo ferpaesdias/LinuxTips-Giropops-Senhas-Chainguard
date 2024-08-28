@@ -1,5 +1,5 @@
 # LinuxTips-Giropops-Senhas-Chainguard
-Desafio da LinuxTips de construir uma imagem do Giropops senhas usando a imagem Python da [Chainguard](https://images.chainguard.dev/directory/image/python/overview) e com o mínimo de vunerabilidades.
+Desafio da LinuxTips de construir uma imagem do Giropops senhas usando a imagem Python da [Chainguard](https://images.chainguard.dev/directory/image/python/overview) e com o mínimo de vulnerabilidades.
 
 
 Curso **Descomplicando o Docker** da [LinuxTips](https://www.linuxtips.io/course/descomplicando-docker).
