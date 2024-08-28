@@ -4,11 +4,6 @@ Desafio da LinuxTips de construir uma imagem do Giropops senhas usando a imagem 
 
 Curso **Descomplicando o Docker** da [LinuxTips](https://www.linuxtips.io/course/descomplicando-docker).
 
-
-## Dockerfile
-
-No diretório Dockerfile tem um arquivo *dockerfile* que cria a imagem com o app **Giropops-Senhas**.
-
 ---
 
 <br> 
