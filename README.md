@@ -41,17 +41,17 @@ docker container run -d --net rede_containers --name giropops-senhas-chainguard 
 
 --- 
 
-### Detecção de vulnerabilidades com o Trivy
+### Detecção de vulnerabilidades na imagem com o Trivy
 
 Verifica vunerabilidades na imagem com o Trivy
 ```shell
 trivy image ferpdias/linuxtips-giropops-senhas-chainguard:1.0
 ```
+
 <br>
 
---- 
-```
- trivy image ferpdias/linuxtips-giropops-senhas-chainguard:1.0
+Saída do comando acima 
+```shell
 2024-08-28T16:35:04-03:00	INFO	[db] Need to update DB
 2024-08-28T16:35:04-03:00	INFO	[db] Downloading DB...	repository="ghcr.io/aquasecurity/trivy-db:2"
 52.44 MiB / 52.44 MiB [--------------------------------------------------------------------------------------------------------------------------------------------] 100.00% 8.53 MiB p/s 6.3s
@@ -72,6 +72,75 @@ trivy image ferpdias/linuxtips-giropops-senhas-chainguard:1.0
 ferpdias/linuxtips-giropops-senhas-chainguard:1.0 (wolfi 20230201)
 
 Total: 0 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 0, CRITICAL: 0)
-``´
+```
+
+<br>
+
+---
+
+### Detecção de vulnerabilidades na image (CVES) com o Docker Scout
+
+Verifica vunerabilidades na imagem (CVES) com o Docker Scout
+```shell
+docker scout cves ferpdias/linuxtips-giropops-senhas-chainguard:1.0
+```
+
+<br>
+
+Saída do comando acima 
+```
+    ✓ Image stored for indexing
+    ✓ Indexed 46 packages
+    ✗ Detected 2 vulnerable packages with a total of 3 vulnerabilities
+
+
+## Overview
+
+                    │                   Analyzed Image                     
+────────────────────┼──────────────────────────────────────────────────────
+  Target            │  ferpdias/linuxtips-giropops-senhas-chainguard:1.0   
+    digest          │  c32fd283e79d                                        
+    platform        │ linux/amd64                                          
+    vulnerabilities │    0C     2H     1M     0L                           
+    size            │ 34 MB                                                
+    packages        │ 46                                                   
+
+
+## Packages and Vulnerabilities
+
+   0C     1H     1M     0L  redis 4.5.4
+pkg:pypi/redis@4.5.4
+
+    ✗ HIGH CVE-2023-31655
+      https://scout.docker.com/v/CVE-2023-31655
+      Affected range : =4.5.4     
+      Fixed version  : not fixed  
+    
+    ✗ MEDIUM CVE-2023-28859
+      https://scout.docker.com/v/CVE-2023-28859
+      Affected range : <5.0.0b1  
+      Fixed version  : 5.0.0b1   
+    
+
+   0C     1H     0M     0L  pip 24.2
+pkg:pypi/pip@24.2
+
+    ✗ HIGH CVE-2018-20225 [OWASP Top Ten 2017 Category A9 - Using Components with Known Vulnerabilities]
+      https://scout.docker.com/v/CVE-2018-20225
+      Affected range : >=0                                           
+      Fixed version  : not fixed                                     
+      CVSS Score     : 7.8                                           
+      CVSS Vector    : CVSS:3.1/AV:L/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H  
+    
+
+
+3 vulnerabilities found in 2 packages
+  LOW       0  
+  MEDIUM    1  
+  HIGH      2  
+  CRITICAL  0  
+```
+
+
 
 
